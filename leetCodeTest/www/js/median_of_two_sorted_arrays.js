@@ -7,7 +7,8 @@ app
       var median;
 
 
-      return median
+      console.log(median);
+      return median;
     };
 
     findMedianSortedArrays([1,7,8,9,46,326],[1,5,7,9,33,46,75,888]);
