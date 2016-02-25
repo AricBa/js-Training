@@ -4,10 +4,8 @@
 app
   .controller('homeCtrl',[function(){
     var findMedianSortedArrays = function(nums1, nums2) {
-      var median,
-        i,
-        currentNode,
-        remainder;
+      var median;
+
         console.log(nums1[6]);
         console.log(nums1[6]+nums2[6]);
 
@@ -15,5 +13,5 @@ app
       return median;
     };
 
-    findMedianSortedArrays([1,7,8,9,4,3],[1,5,7,9,3,4,7,8]);
-  }])
+    findMedianSortedArrays([1,7,8,9,14,23],[1,5,7,9,13,14,17,18]);
+  }]);
