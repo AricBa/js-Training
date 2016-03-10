@@ -8,9 +8,9 @@ app
   .controller('homeCtrl',[function(){
     var addTwoNumbers = function(l1, l2) {
 
-      var carry = 0;
-      var result = new ListNode(-1);
-      var resHead = result;
+      var carry = 0,
+        result = new ListNode(-1),
+        resHead = result;
       while(l1 !== null || l2 !== null){
         var sum = carry;
         if(l1 !== null){
@@ -37,4 +37,60 @@ app
       }
       return resHead.next;
     };
+
+    var addTwoNumbers = function(l1, l2) {
+      var headList = new ListNode('header'),
+        currentNum = 0,
+        nextNum = 0,
+        currentList = headList;
+
+      while(l1 && l2){
+        currentNum = l1.val + l2.val + nextNum;
+        if(currentNum >= 10){
+          currentNum = currentNum - 10;
+          nextNum = 1;
+        }else{
+          nextNum = 0;
+        }
+
+        currentList.next = new ListNode(currentNum);
+        currentList = currentList.next;
+        l1 = l1.next;
+        l2 = l2.next;
+      }
+
+      while(l1){
+        currentNum = l1.val + nextNum;
+        if(currentNum >= 10){
+          currentNum = currentNum - 10;
+          nextNum = 1;
+        }else{
+          nextNum = 0;
+        }
+
+        currentList.next = new ListNode(currentNum);
+        currentList = currentList.next;
+        l1 = l1.next;
+      }
+
+      while(l2){
+        currentNum = l2.val + nextNum;
+        if(currentNum >= 10){
+          currentNum = currentNum - 10;
+          nextNum = 1;
+        }else{
+          nextNum = 0;
+        }
+
+        currentList.next = new ListNode(currentNum);
+        currentList = currentList.next;
+        l2 = l2.next;
+      }
+
+      if(nextNum > 0 ){
+        currentList.next = new ListNode(1);
+      }
+
+      return headList.next;
+    }
   }]);
