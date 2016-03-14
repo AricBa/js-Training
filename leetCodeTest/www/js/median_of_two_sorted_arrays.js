@@ -12,6 +12,5 @@ app
       //console.log(median);
       return median;
     };
-
     findMedianSortedArrays([1,7,8,9,14,23],[1,5,7,9,13,14,17,18]);
   }]);
