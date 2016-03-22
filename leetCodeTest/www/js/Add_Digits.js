@@ -22,7 +22,7 @@
           return currentNum;
         }
       };
-      
+
       var addDigits = function(num) {
         var remainder = 0;
         while(num >= 10){
